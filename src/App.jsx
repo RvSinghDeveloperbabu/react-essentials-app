@@ -2,11 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { render } from 'react-dom'
 
 const rendomWorkds = ['Development', 'Testing', 'Production']
 
 const getRandomNumber = (max) => {
   return Math.floor(Math.random() * (max));
+}
+
+function DetialsOfEnvironment(props){
+  return(<li>
+    <h2>{props.title}</h2>
+    <p>{props.description}</p>
+  </li>)
 }
 
 function App() {
@@ -32,6 +40,11 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
         <p>The Application is running in {environment} Environment.</p>
+        <ul>
+          <DetialsOfEnvironment title='Testing' description="it is used to test the application with test cases."/>
+          <DetialsOfEnvironment title='Production' description="it is used where application is live and used by clients or real users."/>
+          <DetialsOfEnvironment title='Development' description="it is used to build the application by the developer."/>
+        </ul>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
