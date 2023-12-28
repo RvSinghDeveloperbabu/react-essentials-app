@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    container_name: essentials_app
+    build: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/react/src
+      - .:/react
+    command: ["npm", "run", "dev"]
+    ## For standard input for debugging
+    stdin_open: true
+    ## TTY flag for attaching the terminal
+    tty: true
