@@ -3,21 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import {ENVIRONMENT_DATA} from  "./data/testing_data.js"
+import DetailsOfEnvironment from "./components/DetailsOfEnvironment"
 
 const rendomWorkds = ["Development", "Testing", "Production"];
 
 const getRandomNumber = (max) => {
   return Math.floor(Math.random() * max);
 };
-
-function DetialsOfEnvironment(props) {
-  return (
-    <li>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-    </li>
-  );
-}
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,17 +37,17 @@ function App() {
         <ul>
           {ENVIRONMENT_DATA.map((data)=>{
             // if your component props are similler to the data keys we can us this way as well.
-            return (<DetialsOfEnvironment {...data}/>)
+            return (<DetailsOfEnvironment {...data}/>)
           })}
-          {/* <DetialsOfEnvironment
+          {/* <DetailsOfEnvironment
             title="Testing"
             description="it is used to test the application with test cases."
           />
-          <DetialsOfEnvironment
+          <DetailsOfEnvironment
             title="Production"
             description="it is used where application is live and used by clients or real users."
           />
-          <DetialsOfEnvironment
+          <DetailsOfEnvironment
             title="Development"
             description="it is used to build the application by the developer."
           /> */}
