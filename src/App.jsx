@@ -44,10 +44,8 @@ function App() {
         <p>The Application is running in {environment} Environment.</p>
         <ul>
           {ENVIRONMENT_DATA.map((data)=>{
-            return (<DetialsOfEnvironment
-            title={data.title}
-            description={data.description}
-          />)
+            // if your component props are similler to the data keys we can us this way as well.
+            return (<DetialsOfEnvironment {...data}/>)
           })}
           {/* <DetialsOfEnvironment
             title="Testing"
