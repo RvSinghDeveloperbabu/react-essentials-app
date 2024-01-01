@@ -2,8 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import {ENVIRONMENT_DATA} from  "./data/testing_data.js"
-import DetailsOfEnvironment from "./components/DetailsOfEnvironment"
+import { ENVIRONMENT_DATA } from "./data/testing_data.js";
+import DetailsOfEnvironment from "./components/DetailsOfEnvironment";
 import TabButton from "./components/TabButton.jsx";
 
 const rendomWorkds = ["Development", "Testing", "Production"];
@@ -36,9 +36,9 @@ function App() {
         </p>
         <p>The Application is running in {environment} Environment.</p>
         <ul>
-          {ENVIRONMENT_DATA.map((data)=>{
+          {ENVIRONMENT_DATA.map((data) => {
             // if your component props are similler to the data keys we can us this way as well.
-            return (<DetailsOfEnvironment {...data}/>)
+            return <DetailsOfEnvironment {...data} />;
           })}
           {/* <DetailsOfEnvironment
             title="Testing"
@@ -54,7 +54,7 @@ function App() {
           /> */}
         </ul>
       </div>
-      <section id='example'>
+      <section id="example">
         <menu>
           <TabButton>Context</TabButton>
         </menu>
