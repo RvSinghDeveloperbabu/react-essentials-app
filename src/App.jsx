@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import {ENVIRONMENT_DATA} from  "./data/testing_data.js"
 import DetailsOfEnvironment from "./components/DetailsOfEnvironment"
+import TabButton from "./components/TabButton.jsx";
 
 const rendomWorkds = ["Development", "Testing", "Production"];
 
@@ -53,6 +54,11 @@ function App() {
           /> */}
         </ul>
       </div>
+      <section id='example'>
+        <menu>
+          <TabButton>Context</TabButton>
+        </menu>
+      </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
