@@ -56,7 +56,10 @@ function App() {
       </div>
       <section id="example">
         <menu>
-          <TabButton>Context</TabButton>
+          <TabButton>Components</TabButton>
+          <TabButton>JSX</TabButton>
+          <TabButton>Porps</TabButton>
+          <TabButton>States</TabButton>
         </menu>
       </section>
       <p className="read-the-docs">
