@@ -22,6 +22,15 @@ function App() {
   }
 
   const environment = rendomWorkds[getRandomNumber(rendomWorkds.length)];
+
+  let tabContentData = <p>Please select the Content Topic.</p>
+  if (tabContent) {
+    tabContentData = <div id='tab-content'>
+      <h2>{tabContent.title}</h2>
+      <p>{tabContent.description}</p>
+    </div>
+  }
+
   return (
     <>
       <div>
@@ -73,11 +82,7 @@ function App() {
           <TabButton onSelect={() => handleSelect("props")}>Porps</TabButton>
           <TabButton onSelect={() => handleSelect("states")}>States</TabButton>
         </menu>
-        {tabContent === undefined && <p>Please select the Content Topic.</p>} 
-        {tabContent !== undefined && <div id='tab-content'>
-                                  <h2>{tabContent.title}</h2>
-                                  <p>{tabContent.description}</p>
-                                </div>} 
+        {tabContentData} 
       </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
