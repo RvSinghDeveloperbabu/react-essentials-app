@@ -73,11 +73,10 @@ function App() {
           <TabButton onSelect={() => handleSelect("props")}>Porps</TabButton>
           <TabButton onSelect={() => handleSelect("states")}>States</TabButton>
         </menu>
-        {tabContent === undefined ? <p>Please select the Content Topic.</p> : null} 
-        {tabContent !== undefined ? <div id='tab-content'>
+        {tabContent === undefined ? <p>Please select the Content Topic.</p> : <div id='tab-content'>
                                   <h2>{tabContent.title}</h2>
                                   <p>{tabContent.description}</p>
-                                </div> : null} 
+                                </div>} 
       </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
