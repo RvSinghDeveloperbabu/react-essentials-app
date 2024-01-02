@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { ENVIRONMENT_DATA } from "./data/testing_data.js";
+import { ENVIRONMENT_DATA, CONTENT } from "./data/testing_data.js";
 import DetailsOfEnvironment from "./components/DetailsOfEnvironment";
 import TabButton from "./components/TabButton.jsx";
 
@@ -14,10 +14,10 @@ const getRandomNumber = (max) => {
 
 function App() {
   const [count, setCount] = useState(0);
-  const [tabContent, setTabContent] =useState("Click me to render Content.")
+  const [tabContent, setTabContent] =useState()
 
   function handleSelect(element) {
-    setTabContent(`${element} - selected!`)
+    setTabContent(CONTENT[element])
     console.log(`${tabContent} - selected!`);
   }
 
@@ -62,14 +62,22 @@ function App() {
       </div>
       <section id="example">
         <menu>
-          <TabButton onSelect={() => handleSelect("Components")}>
+          {/* {CONTENT.map((content)=>{
+            debugger
+            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
+          })} */}
+          <TabButton onSelect={() => handleSelect("components")}>
             Components
           </TabButton>
-          <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-          <TabButton onSelect={() => handleSelect("Porps")}>Porps</TabButton>
-          <TabButton onSelect={() => handleSelect("States")}>States</TabButton>
+          <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+          <TabButton onSelect={() => handleSelect("props")}>Porps</TabButton>
+          <TabButton onSelect={() => handleSelect("states")}>States</TabButton>
         </menu>
-        <p>{tabContent}</p>
+        {tabContent === undefined ? <p>Please select the Content Topic.</p> : null} 
+        {tabContent !== undefined ? <div id='tab-content'>
+                                  <h2>{tabContent.title}</h2>
+                                  <p>{tabContent.description}</p>
+                                </div> : null} 
       </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
