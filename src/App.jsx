@@ -14,9 +14,11 @@ const getRandomNumber = (max) => {
 
 function App() {
   const [count, setCount] = useState(0);
+  const [tabContent, setTabContent] =useState("Click me to render Content.")
 
   function handleSelect(element) {
-    console.log(`${element} - selected!`);
+    setTabContent(`${element} - selected!`)
+    console.log(`${tabContent} - selected!`);
   }
 
   const environment = rendomWorkds[getRandomNumber(rendomWorkds.length)];
@@ -67,6 +69,7 @@ function App() {
           <TabButton onSelect={() => handleSelect("Porps")}>Porps</TabButton>
           <TabButton onSelect={() => handleSelect("States")}>States</TabButton>
         </menu>
+        <p>{tabContent}</p>
       </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
