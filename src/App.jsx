@@ -15,8 +15,8 @@ const getRandomNumber = (max) => {
 function App() {
   const [count, setCount] = useState(0);
 
-  function handleSelect() {
-    console.log("I am working - selected!");
+  function handleSelect(element) {
+    console.log(`${element} - selected!`);
   }
 
   const environment = rendomWorkds[getRandomNumber(rendomWorkds.length)];
@@ -60,10 +60,12 @@ function App() {
       </div>
       <section id="example">
         <menu>
-          <TabButton onSelect={handleSelect}>Components</TabButton>
-          <TabButton onSelect={handleSelect}>JSX</TabButton>
-          <TabButton onSelect={handleSelect}>Porps</TabButton>
-          <TabButton onSelect={handleSelect}>States</TabButton>
+          <TabButton onSelect={() => handleSelect("Components")}>
+            Components
+          </TabButton>
+          <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
+          <TabButton onSelect={() => handleSelect("Porps")}>Porps</TabButton>
+          <TabButton onSelect={() => handleSelect("States")}>States</TabButton>
         </menu>
       </section>
       <p className="read-the-docs">
