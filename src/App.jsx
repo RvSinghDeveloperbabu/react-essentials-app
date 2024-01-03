@@ -55,28 +55,12 @@ function App() {
         <ul>
           {ENVIRONMENT_DATA.map((data) => {
             // if your component props are similler to the data keys we can us this way as well.
-            return <DetailsOfEnvironment {...data} />;
+            return <DetailsOfEnvironment key={data.title} {...data} />;
           })}
-          {/* <DetailsOfEnvironment
-            title="Testing"
-            description="it is used to test the application with test cases."
-          />
-          <DetailsOfEnvironment
-            title="Production"
-            description="it is used where application is live and used by clients or real users."
-          />
-          <DetailsOfEnvironment
-            title="Development"
-            description="it is used to build the application by the developer."
-          /> */}
         </ul>
       </div>
       <section id="example">
         <menu>
-          {/* {CONTENT.map((content)=>{
-            debugger
-            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-          })} */}
           <TabButton
             isSelected={
               tabContent && tabContent.title.toLowerCase() === "components"
