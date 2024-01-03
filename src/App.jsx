@@ -14,21 +14,23 @@ const getRandomNumber = (max) => {
 
 function App() {
   const [count, setCount] = useState(0);
-  const [tabContent, setTabContent] =useState()
+  const [tabContent, setTabContent] = useState();
 
   function handleSelect(element) {
-    setTabContent(CONTENT[element])
+    setTabContent(CONTENT[element]);
     console.log(`${tabContent} - selected!`);
   }
 
   const environment = rendomWorkds[getRandomNumber(rendomWorkds.length)];
 
-  let tabContentData = <p>Please select the Content Topic.</p>
+  let tabContentData = <p>Please select the Content Topic.</p>;
   if (tabContent) {
-    tabContentData = <div id='tab-content'>
-      <h2>{tabContent.title}</h2>
-      <p>{tabContent.description}</p>
-    </div>
+    tabContentData = (
+      <div id="tab-content">
+        <h2>{tabContent.title}</h2>
+        <p>{tabContent.description}</p>
+      </div>
+    );
   }
 
   return (
@@ -75,14 +77,38 @@ function App() {
             debugger
             <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
           })} */}
-          <TabButton onSelect={() => handleSelect("components")}>
+          <TabButton
+            isSelected={
+              tabContent && tabContent.title.toLowerCase() === "components"
+            }
+            onSelect={() => handleSelect("components")}
+          >
             Components
           </TabButton>
-          <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-          <TabButton onSelect={() => handleSelect("props")}>Porps</TabButton>
-          <TabButton onSelect={() => handleSelect("states")}>States</TabButton>
+          <TabButton
+            isSelected={tabContent && tabContent.title.toLowerCase() === "jsx"}
+            onSelect={() => handleSelect("jsx")}
+          >
+            JSX
+          </TabButton>
+          <TabButton
+            isSelected={
+              tabContent && tabContent.title.toLowerCase() === "props"
+            }
+            onSelect={() => handleSelect("props")}
+          >
+            Porps
+          </TabButton>
+          <TabButton
+            isSelected={
+              tabContent && tabContent.title.toLowerCase() === "states"
+            }
+            onSelect={() => handleSelect("states")}
+          >
+            States
+          </TabButton>
         </menu>
-        {tabContentData} 
+        {tabContentData}
       </section>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
