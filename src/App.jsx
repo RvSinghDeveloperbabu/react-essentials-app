@@ -2,9 +2,10 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { ENVIRONMENT_DATA, CONTENT } from "./data/testing_data.js";
-import DetailsOfEnvironment from "./components/DetailsOfEnvironment";
+import { CONTENT } from "./data/testing_data.js";
+
 import TabButton from "./components/TabButton.jsx";
+import DetailsOfEnvironments from "./components/DetailsOfEnvironments.jsx";
 
 const rendomWorkds = ["Development", "Testing", "Production"];
 
@@ -52,12 +53,7 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
         <p>The Application is running in {environment} Environment.</p>
-        <ul>
-          {ENVIRONMENT_DATA.map((data) => {
-            // if your component props are similler to the data keys we can us this way as well.
-            return <DetailsOfEnvironment key={data.title} {...data} />;
-          })}
-        </ul>
+        <DetailsOfEnvironments />
       </div>
       <section id="example">
         <menu>
