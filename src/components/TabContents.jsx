@@ -27,25 +27,25 @@ export default function TabContents() {
           isSelected={
             tabContent && tabContent.title.toLowerCase() === "components"
           }
-          onSelect={() => handleSelect("components")}
+          onClick={() => handleSelect("components")}
         >
           Components
         </TabButton>
         <TabButton
           isSelected={tabContent && tabContent.title.toLowerCase() === "jsx"}
-          onSelect={() => handleSelect("jsx")}
+          onClick={() => handleSelect("jsx")}
         >
           JSX
         </TabButton>
         <TabButton
           isSelected={tabContent && tabContent.title.toLowerCase() === "props"}
-          onSelect={() => handleSelect("props")}
+          onClick={() => handleSelect("props")}
         >
           Porps
         </TabButton>
         <TabButton
           isSelected={tabContent && tabContent.title.toLowerCase() === "states"}
-          onSelect={() => handleSelect("states")}
+          onClick={() => handleSelect("states")}
         >
           States
         </TabButton>
