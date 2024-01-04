@@ -24,6 +24,7 @@ export default function TabContents() {
   return (
     <Section id="example" title="TabButton Section">
       <Tabs
+        buttonsContainer="menu"
         buttons={
           <>
             <TabButton
